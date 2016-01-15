@@ -1,0 +1,21 @@
+{
+  "name": "protocore-studio",
+  "version": "0.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "keywords": [
+    "protocore"
+  ],
+  "author": "hegdeashwin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hegdeashwin/protocore-studio/issues"
+  },
+  "homepage": "https://github.com/hegdeashwin/protocore-studio#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.0"
+  }
+}
