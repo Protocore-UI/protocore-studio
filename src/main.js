@@ -23,7 +23,11 @@ function createWindow () {
    */
   let browserWindowConfig = {
       width: 800,
-      height: 600
+      height: 600,
+      center: true,
+      title: "Protocore Studio",
+      maxWidth: 800,
+      maxHeight: 600
   };
 
   mainWindow = new BrowserWindow(browserWindowConfig);
