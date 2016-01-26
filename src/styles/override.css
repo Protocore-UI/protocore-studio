@@ -73,3 +73,7 @@
 hr {
     border-color: #c6c6c6;
 }
+
+.page-header {
+  margin: 0;
+}

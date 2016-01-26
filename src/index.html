@@ -3,31 +3,166 @@
   <head>
     <meta charset="UTF-8">
     <title>Protocore Studio</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles/override.css" />
   </head>
   <body>
-    <h1>Protocore Studio</h1>
-    <hr/>
 
-    <h2>Stylesheets</h2>
-    <ul>
-      <li>CSS (Default)</li>
-      <li>LESS</li>
-      <li>SCSS</li>
-    </ul>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <i class="fa fa-bars fa-lg"></i>
+          </button>
+          <a class="navbar-brand" href="#" title="protocore-studio v0.0.0 Alpha">Protocore Studio <sup><small>v0.0.0 Alpha</small></sup></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Developers Connection">
+                <i class="fa fa-connectdevelop fa-lg"></i> Developers <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a title="What's New" href="#">What's New</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a title="API Explorer" href="#" target="_blank">API Explorer</a>
+                </li>
+                <li>
+                  <a title="Documentation" href="#" target="_blank">Documentation</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="More Information, Help etc.">
+                <i class="fa fa-lg fa-life-saver"></i> Help <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a title="Github Home Page" href="//github.com/hegdeashwin/protocore-studio" target="_blank">Github Home Page</a>
+                </li>
+                <li>
+                  <a title="Gitbook Page" href="#" target="_blank">Gitbook Page</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a title="Release Page" href="//github.com/hegdeashwin/protocore-studio/releases" target="_blank">Release Page</a>
+                </li>
+                <li>
+                  <a title="Milestones" href="//github.com/hegdeashwin/protocore-studio/milestones" target="_blank">Milestones</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a title="Issues Page" href="//github.com/hegdeashwin/protocore-studio/issues" target="_blank">Issues Page</a>
+                </li>
+                <li>
+                  <a title="Open Pull Requests" href="//github.com/hegdeashwin/protocore-studio/pulls" target="_blank">Open Pull Requests</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a title="About protocore-studio" href="//github.com/hegdeashwin/protocore-studio" target="_blank">About Protocore Studio</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <h2>Task &amp; Build Automation</h2>
-    <ul>
-      <li>Webpack (Default)</li>
-      <li>Grunt</li>
-      <li>Gulp</li>
-      <li>Browserify</li>
-    </ul>
+    <div class="container">
+      <div class="page-header">
+        <h2>Choose your tool</h2>
+        <h3>Do you want Protocore scaffolding to include ...</h3>
+      </div>
 
-    <h2>ECMA Script Version Support</h2>
-    <ul>
-      <li>ECMA Script 5.1 (Default)</li>
-      <li>ECMA Script 6</li>
-    </ul>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">CSS Preprocessor ? (Default: LESS)</h3>
+            </div>
+            <div class="panel-body">
+              <label class="radio-inline">
+                <input type="radio" name="preprocessorOpt" value="css"> No Preprocessor (Use CSS only)
+              </label>
+              <label class="radio-inline">
+                <input type="radio" checked="true" name="preprocessorOpt" value="less"> LESS
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="preprocessorOpt" value="sass"> SASS
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="preprocessorOpt" value="stylus"> Stylus
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Build Systems ? (Default: Webpack)</h3>
+            </div>
+            <div class="panel-body">
+              <label class="radio-inline">
+                <input type="radio" name="buildSysOpt" checked="true" value="webpack"> Webpack
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="buildSysOpt" value="require"> Require.js
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="buildSysOpt" value="grunt"> Grunt
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="buildSysOpt" value="gulp"> Gulp
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Any Node.js based server ? (Default: Express)</h3>
+            </div>
+            <div class="panel-body">
+              <label class="radio-inline">
+                <input type="radio" name="serverOpt" checked="true" value="noserver"> No Server
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="serverOpt" value="express"> Express
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="serverOpt" value="koa"> Koa
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="serverOpt" value="hapi"> Hapi
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-primary">Generate</button>
+          <button type="button" class="btn btn-danger">Exit</button>
+          <button type="button" class="btn btn-success pull-right">Help</button>
+        </div>
+      </div>
+
+    </div>
+
+    <script>window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');</script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="processes/main/menu.js"></script>
   </body>
 </html>
