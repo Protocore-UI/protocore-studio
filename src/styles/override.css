@@ -17,7 +17,8 @@
 .dropdown-menu,
 .form-control,
 .panel-heading,
-.thumbnail {
+.thumbnail,
+.pager li>a, .pager li>span {
   border-radius: 0;
 }
 
@@ -76,4 +77,12 @@ hr {
 
 .page-header {
   margin: 0;
+}
+
+.tab-pane {
+  padding: 0;
+}
+
+.navbar {
+  min-height: 0;
 }
