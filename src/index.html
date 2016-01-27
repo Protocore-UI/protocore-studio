@@ -74,95 +74,113 @@
     </nav>
 
     <div class="container">
-      <div class="page-header">
-        <h2>Choose your tool</h2>
-        <h3>Do you want Protocore scaffolding to include ...</h3>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">CSS Preprocessor ? (Default: LESS)</h3>
+      <div id="rootwizard">
+					<div class="navbar">
+					  <div class="navbar-inner">
+              <ul>
+                <li><a href="#projectinfo" data-toggle="tab">Project Info</a></li>
+                <li><a href="#preprocessor" data-toggle="tab">Preprocessor</a></li>
+                <li><a href="#build" data-toggle="tab">Build Systems</a></li>
+                <li><a href="#server" data-toggle="tab">Server</a></li>
+              </ul>
+					  </div>
+					</div>
+					<div class="tab-content">
+            <div class="tab-pane" id="projectinfo">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Tell Protocore about your project</h3>
+                </div>
+                <div class="panel-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="projectName">Please enter your project name</label>
+                      <input type="text" maxlength="30" class="form-control" id="projectName" placeholder="Maximum 30 characters">
+                      <!-- <p class="help-block">Example block-level help text here.</p> -->
+                    </div>
+                    <div class="form-group">
+                      <label for="projectName">Please enter your project Path</label>
+                      <input type="file" class="form-control" id="projectPath">
+                      <!-- <p class="help-block">Example block-level help text here.</p> -->
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
-            <div class="panel-body">
-              <label class="radio-inline">
-                <input type="radio" name="preprocessorOpt" value="css"> No Preprocessor (Use CSS only)
-              </label>
-              <label class="radio-inline">
-                <input type="radio" checked="true" name="preprocessorOpt" value="less"> LESS
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="preprocessorOpt" value="sass"> SASS
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="preprocessorOpt" value="stylus"> Stylus
-              </label>
+            <div class="tab-pane" id="preprocessor">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Do you want Protocore scaffolding to include CSS Preprocessor ? (Default: LESS)</h3>
+                </div>
+                <div class="panel-body">
+                  <label class="radio-inline">
+                    <input type="radio" name="preprocessorOpt" value="css"> No Preprocessor (Use CSS only)
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" checked="true" name="preprocessorOpt" value="less"> LESS
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="preprocessorOpt" value="sass"> SASS
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="preprocessorOpt" value="stylus"> Stylus
+                  </label>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Build Systems ? (Default: Webpack)</h3>
+            <div class="tab-pane" id="build">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Do you want Protocore scaffolding to include Build Systems ? (Default: Webpack)</h3>
+                </div>
+                <div class="panel-body">
+                  <label class="radio-inline">
+                    <input type="radio" name="buildSysOpt" checked="true" value="webpack"> Webpack
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="buildSysOpt" value="require"> Require.js
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="buildSysOpt" value="grunt"> Grunt
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="buildSysOpt" value="gulp"> Gulp
+                  </label>
+                </div>
+              </div>
             </div>
-            <div class="panel-body">
-              <label class="radio-inline">
-                <input type="radio" name="buildSysOpt" checked="true" value="webpack"> Webpack
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="buildSysOpt" value="require"> Require.js
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="buildSysOpt" value="grunt"> Grunt
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="buildSysOpt" value="gulp"> Gulp
-              </label>
+            <div class="tab-pane" id="server">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Do you want Protocore scaffolding to include any Node.js based server ? (Default: Express)</h3>
+                </div>
+                <div class="panel-body">
+                  <label class="radio-inline">
+                    <input type="radio" name="serverOpt" checked="true" value="noserver"> No Server
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="serverOpt" value="express"> Express
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="serverOpt" value="koa"> Koa
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="serverOpt" value="hapi"> Hapi
+                  </label>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Any Node.js based server ? (Default: Express)</h3>
-            </div>
-            <div class="panel-body">
-              <label class="radio-inline">
-                <input type="radio" name="serverOpt" checked="true" value="noserver"> No Server
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="serverOpt" value="express"> Express
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="serverOpt" value="koa"> Koa
-              </label>
-              <label class="radio-inline">
-                <input type="radio" name="serverOpt" value="hapi"> Hapi
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <button type="button" class="btn btn-primary">Generate</button>
-          <button type="button" class="btn btn-danger">Exit</button>
-          <button type="button" class="btn btn-success pull-right">Help</button>
-        </div>
-      </div>
-
+						<ul class="pager wizard">
+							<li class="previous"><a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-left fa-lg"></i> Previous</a></li>
+							<li class="next"><a href="#" class="btn btn-default">Next <i class="fa fa-arrow-circle-right fa-lg"></i></a></li>
+						</ul>
+					</div>
+				</div>
     </div>
 
     <script>window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');</script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="processes/main/menu.js"></script>
+    <script src="../node_modules/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+    <script src="processes/common/wizard.js"></script>
   </body>
 </html>
