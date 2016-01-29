@@ -96,11 +96,15 @@
                     <div class="form-group">
                       <label for="projectName">Please enter your project name</label>
                       <input type="text" maxlength="30" class="form-control" id="projectName" placeholder="Maximum 30 characters">
-                      <!-- <p class="help-block">Example block-level help text here.</p> -->
                     </div>
                     <div class="form-group">
-                      <button class="btn btn-success form-control" id="projectPath">Please select your project Path</button>
-                      <!-- <p class="help-block">Example block-level help text here.</p> -->
+                      <label for="projectPath">Please enter your project path</label>
+                      <div class="input-group">
+                        <span class="input-group-btn">
+                          <button class="btn btn-success" id="selectProjectPath" type="button">Browse</button>
+                        </span>
+                        <input type="text" class="form-control" readonly placeholder="No project path got selected yet!">
+                      </div>
                     </div>
                   </form>
                 </div>

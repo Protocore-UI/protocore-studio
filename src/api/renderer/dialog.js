@@ -11,7 +11,7 @@
     win = null;
   });
 
-  $("#projectPath").click(function() {
+  $("#selectProjectPath").click(function() {
     dialog.showOpenDialog({
       properties: [ 'openDirectory' ]
     }, function(dir) {

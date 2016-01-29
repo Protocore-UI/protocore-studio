@@ -40,7 +40,7 @@ function createWindow () {
   /**
    * Enable below line to Open the DevTools.
    */
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   /**
    * Emitted when the window is closed.
