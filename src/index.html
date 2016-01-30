@@ -74,10 +74,16 @@
     </nav>
 
     <div class="container">
-      <div id="appWizard">
-					<div class="navbar">
+
+      <div class="panel panel-default" id="appWizard">
+        <div class="panel-heading">
+          <h3 class="panel-title">Welcome</h3>
+        </div>
+        <div class="panel-body master-panel">
+          <div class="navbar">
 					  <div class="navbar-inner">
               <ul>
+                <li><a href="#welcome" data-toggle="tab">Welcome</a></li>
                 <li><a href="#projectinfo" data-toggle="tab">Project Info</a></li>
                 <li><a href="#preprocessor" data-toggle="tab">Preprocessor</a></li>
                 <li><a href="#build" data-toggle="tab">Build Systems</a></li>
@@ -86,25 +92,42 @@
 					  </div>
 					</div>
 					<div class="tab-content">
+            <div class="tab-pane" id="welcome">
+              <p>Welcome to the Protocore Studio stack generation wizard.</p>
+              <hr/>
+              <p>Be sure to carefully read and understand all the rights. You must accept the license terms before you can generate stack.</p>
+              <textarea>
+                License
+              </textarea>
+              <p>
+                <input type="radio" name="agreement" /> I have read and accept the license terms.
+                <input type="radio" name="agreement" /> I do not accept the license terms.
+              </p>
+              <p>Click Next to continue</p>
+            </div>
             <div class="tab-pane" id="projectinfo">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Tell Protocore about your project</h3>
+                  <h3 class="panel-title">About the project</h3>
                 </div>
                 <div class="panel-body">
                   <form>
                     <div class="form-group">
-                      <label for="projectName">Please enter your project name</label>
-                      <input type="text" maxlength="30" class="form-control" id="projectName" placeholder="Maximum 30 characters">
+                      <label for="projName">Please enter your project name</label>
+                      <input type="text" maxlength="30" class="form-control" id="projName" placeholder="Maximum 30 characters">
                     </div>
                     <div class="form-group">
-                      <label for="projectPath">Please enter your project path</label>
+                      <label for="projPath">Please select your project directory path</label>
                       <div class="input-group">
                         <span class="input-group-btn">
-                          <button class="btn btn-success" id="selectProjectPath" type="button">Browse</button>
+                          <button class="btn btn-success" id="projPath" type="button">Browse</button>
                         </span>
-                        <input type="text" class="form-control" readonly placeholder="No project path got selected yet!">
+                        <input type="text" class="form-control" readonly placeholder="Project path is not yet selected!">
                       </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="projDiscription">Adds some project discription</label>
+                      <input type="text" maxlength="255" id="projDiscription" class="form-control" placeholder="Project discription is not yet added!" />
                     </div>
                   </form>
                 </div>
@@ -173,12 +196,17 @@
                 </div>
               </div>
             </div>
-						<ul class="pager wizard">
-							<li class="previous"><a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-left fa-lg"></i> Previous</a></li>
-							<li class="next"><a href="#" class="btn btn-default">Next <i class="fa fa-arrow-circle-right fa-lg"></i></a></li>
-						</ul>
 					</div>
-				</div>
+        </div>
+        <div class="panel-footer">
+          <ul class="pager wizard">
+            <li class="previous"><a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-left fa-lg"></i> Previous</a></li>
+            <li class="next"><a href="#" class="btn btn-default">Next <i class="fa fa-arrow-circle-right fa-lg"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+
     </div>
 
     <script>window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');</script>
@@ -187,5 +215,6 @@
 
     <script src="api/renderer/wizard.js"></script>
     <script src="api/renderer/dialog.js"></script>
+    <script src="api/renderer/shell.js"></script>
   </body>
 </html>

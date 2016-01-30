@@ -26,8 +26,7 @@ function createWindow () {
       height: 600,
       center: true,
       title: "Protocore Studio",
-      maxWidth: 800,
-      maxHeight: 600
+      resizable: false
   };
 
   mainWindow = new BrowserWindow(browserWindowConfig);
@@ -40,7 +39,7 @@ function createWindow () {
   /**
    * Enable below line to Open the DevTools.
    */
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   /**
    * Emitted when the window is closed.
@@ -52,6 +51,11 @@ function createWindow () {
      * when you should delete the corresponding element.
      */
     mainWindow = null;
+  });
+
+  mainWindow.webContents.on('new-window', function(e, url) {
+    e.preventDefault();
+    require('shell').openExternal(url);
   });
 }
 

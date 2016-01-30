@@ -86,3 +86,11 @@ hr {
 .navbar {
   min-height: 0;
 }
+
+.master-panel {
+  height: 400px;
+}
+
+.panel-footer .pager {
+  margin: 0;
+}
