@@ -76,11 +76,8 @@
     <div class="container">
 
       <div class="panel panel-default" id="appWizard">
-        <div class="panel-heading">
-          <h3 class="panel-title">Welcome</h3>
-        </div>
         <div class="panel-body master-panel">
-          <div class="navbar">
+          <div class="navbar" style="display:none;">
 					  <div class="navbar-inner">
               <ul>
                 <li><a href="#welcome" data-toggle="tab">Welcome</a></li>
@@ -93,45 +90,44 @@
 					</div>
 					<div class="tab-content">
             <div class="tab-pane" id="welcome">
-              <p>Welcome to the Protocore Studio stack generation wizard.</p>
+              <p class="lead">Welcome to the Protocore Studio stack generation wizard.</p>
               <hr/>
-              <p>Be sure to carefully read and understand all the rights. You must accept the license terms before you can generate stack.</p>
-              <textarea>
-                License
-              </textarea>
-              <p>
-                <input type="radio" name="agreement" /> I have read and accept the license terms.
-                <input type="radio" name="agreement" /> I do not accept the license terms.
+              <p>Be sure to carefully read and understand all the rights. You must accept the license terms before you can generate stack and click Next to continue.</p>
+              <textarea id="license" cols="83" rows="13"></textarea>
+              <p class="agreement">
+                <label class="radio-inline">
+                  <input type="radio" name="agreement" data-toggle="tooltip" data-placement="top" title="You read and accept the license terms" value="option1"> I have read and accept the license terms.
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="agreement" data-toggle="tooltip" data-placement="top" title="You do not accept the license terms" value="option2"> I do not accept the license terms.
+                </label>
               </p>
-              <p>Click Next to continue</p>
             </div>
             <div class="tab-pane" id="projectinfo">
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title">About the project</h3>
+              <p class="lead">Kickstart new Project</p>
+              <hr/>
+              <p>Please fill up the below form, as an initial step to create the new project stack, project name and location is required.</p>
+              <form>
+                <div class="form-group">
+                  <label class="control-label" for="projName">Please enter your project name (Required)</label>
+                  <input type="text" maxlength="30" class="form-control" id="projName" placeholder="E.g. protocore-stack">
+                  <span class="help-block">Maximum 30 characters are allowed.</span>
                 </div>
-                <div class="panel-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="projName">Please enter your project name</label>
-                      <input type="text" maxlength="30" class="form-control" id="projName" placeholder="Maximum 30 characters">
-                    </div>
-                    <div class="form-group">
-                      <label for="projPath">Please select your project directory path</label>
-                      <div class="input-group">
-                        <span class="input-group-btn">
-                          <button class="btn btn-success" id="projPath" type="button">Browse</button>
-                        </span>
-                        <input type="text" class="form-control" readonly placeholder="Project path is not yet selected!">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label for="projDiscription">Adds some project discription</label>
-                      <input type="text" maxlength="255" id="projDiscription" class="form-control" placeholder="Project discription is not yet added!" />
-                    </div>
-                  </form>
+                <div class="form-group">
+                  <label class="control-label" for="projPath">Please select your project directory path (Required)</label>
+                  <div class="input-group">
+                    <span class="input-group-btn">
+                      <button class="btn btn-success" id="projPath" type="button">Browse</button>
+                    </span>
+                    <input type="text" class="form-control" readonly placeholder="Project path is not yet selected!">
+                  </div>
+                  <span class="help-block"></span>
                 </div>
-              </div>
+                <div class="form-group">
+                  <label class="control-label" for="projDiscription">Adds some project discription (Optional)</label>
+                  <input type="text" maxlength="255" id="projDiscription" class="form-control" placeholder="Project discription is not yet added!" />
+                </div>
+              </form>
             </div>
             <div class="tab-pane" id="preprocessor">
               <div class="panel panel-primary">
@@ -206,7 +202,6 @@
         </div>
       </div>
 
-
     </div>
 
     <script>window.$ = window.jQuery = require('../node_modules/jquery/dist/jquery.min.js');</script>
@@ -215,6 +210,6 @@
 
     <script src="api/renderer/wizard.js"></script>
     <script src="api/renderer/dialog.js"></script>
-    <script src="api/renderer/shell.js"></script>
+    <script src="api/renderer/file.js"></script>
   </body>
 </html>
