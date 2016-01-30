@@ -88,9 +88,22 @@ hr {
 }
 
 .master-panel {
-  height: 400px;
+  height: 450px;
 }
 
 .panel-footer .pager {
   margin: 0;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}
+
+.agreement {
+  padding 5px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
 }
