@@ -4,8 +4,10 @@
  * Module to control application life.
  */
 const electron = require('electron');
-const app = electron.app;
 const product = require('../package');
+const config = require('./configs');
+
+const app = electron.app;
 
 /**
  * Module to create native browser window.
@@ -23,11 +25,11 @@ function createWindow () {
    * Create the browser window.
    */
   let browserWindowConfig = {
-      width: 800,
-      height: 600,
-      center: true,
-      title: "Protocore Studio v" + product.version,
-      resizable: false
+      width: config.project.window.width,
+      height: config.project.window.height,
+      center: config.project.window.isCenter,
+      title: config.project.name + " v" + product.version,
+      resizable: config.project.window.isResizable
   };
 
   mainWindow = new BrowserWindow(browserWindowConfig);
