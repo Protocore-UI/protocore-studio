@@ -5,6 +5,7 @@
  */
 const electron = require('electron');
 const app = electron.app;
+const product = require('../package');
 
 /**
  * Module to create native browser window.
@@ -25,7 +26,7 @@ function createWindow () {
       width: 800,
       height: 600,
       center: true,
-      title: "Protocore Studio",
+      title: "Protocore Studio v" + product.version,
       resizable: false
   };
 
