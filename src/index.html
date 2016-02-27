@@ -25,13 +25,6 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a title="What's New" href="#">What's New</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a title="API Explorer" href="#" target="_blank">API Explorer</a>
-                </li>
-                <li>
                   <a title="Documentation" href="#" target="_blank">Documentation</a>
                 </li>
               </ul>
@@ -93,10 +86,10 @@
               <textarea id="license" cols="83" rows="13"></textarea>
               <p class="agreement">
                 <label class="radio-inline">
-                  <input type="radio" name="agreement" data-toggle="tooltip" data-placement="top" title="You read and accept the license terms" value="option1"> I have read and accept the license terms.
+                  <input type="radio" name="agreement" data-toggle="tooltip" data-placement="top" title="You read and accept the license terms" value="0"> I have read and accept the license terms.
                 </label>
                 <label class="radio-inline">
-                  <input type="radio" name="agreement" data-toggle="tooltip" data-placement="top" title="You do not accept the license terms" value="option2"> I do not accept the license terms.
+                  <input type="radio" name="agreement" data-toggle="tooltip" data-placement="top" title="You do not accept the license terms" value="1"> I do not accept the license terms.
                 </label>
               </p>
             </div>
@@ -123,6 +116,7 @@
                 <div class="form-group">
                   <label class="control-label" for="projDiscription">Adds some project discription (Optional)</label>
                   <input type="text" maxlength="255" id="projDiscription" class="form-control" placeholder="Project discription is not yet added!" />
+                  <span class="help-block">Maximum 255 characters are allowed including spaces in between text.</span>
                 </div>
               </form>
             </div>
@@ -193,8 +187,8 @@
         </div>
         <div class="panel-footer">
           <ul class="pager wizard">
-            <li class="previous"><a href="#" class="btn btn-default"><i class="fa fa-arrow-circle-left fa-lg"></i> Previous</a></li>
-            <li class="next"><a href="#" class="btn btn-default">Next <i class="fa fa-arrow-circle-right fa-lg"></i></a></li>
+            <li class="previous pull-left"><button class="btn btn-default"><i class="fa fa-arrow-circle-left fa-lg"></i> Previous</button></li>
+            <li class="next pull-right"><button class="btn btn-primary">Next <i class="fa fa-arrow-circle-right fa-lg"></i></button></li>
           </ul>
         </div>
       </div>
