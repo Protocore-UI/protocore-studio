@@ -22,7 +22,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Developers Connection">
-                <i class="fa fa-connectdevelop fa-lg"></i> Developers <span class="caret"></span>
+                <i class="fa fa-life-saver fa-lg"></i> Help <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <li>
@@ -39,7 +39,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="More Information, Help etc.">
-                <i class="fa fa-lg fa-life-saver"></i> Help <span class="caret"></span>
+                <i class="fa fa-lg fa-connectdevelop"></i> Developers <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <li>
@@ -82,9 +82,7 @@
               <ul>
                 <li><a href="#welcome" data-toggle="tab">Welcome</a></li>
                 <li><a href="#projectinfo" data-toggle="tab">Project Info</a></li>
-                <li><a href="#preprocessor" data-toggle="tab">Preprocessor</a></li>
-                <li><a href="#build" data-toggle="tab">Build Systems</a></li>
-                <li><a href="#server" data-toggle="tab">Server</a></li>
+                <li><a href="#tools" data-toggle="tab">Tools</a></li>
               </ul>
 					  </div>
 					</div>
@@ -119,7 +117,7 @@
                     <span class="input-group-btn">
                       <button class="btn btn-success" id="projPath" type="button">Browse</button>
                     </span>
-                    <input type="text" class="form-control" readonly placeholder="Project path is not yet selected!">
+                    <input type="text" class="form-control" id="selectedProjPath" readonly placeholder="Project path is not yet selected!">
                   </div>
                   <span class="help-block"></span>
                 </div>
@@ -129,68 +127,68 @@
                 </div>
               </form>
             </div>
-            <div class="tab-pane" id="preprocessor">
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Do you want Protocore scaffolding to include CSS Preprocessor ? (Default: LESS)</h3>
+            <div class="tab-pane" id="tools">
+              <p class="lead">Choose your tool</p>
+              <hr/>
+              <p>Do you want Protocore scaffolding to include: </p>
+              <form>
+                <div class="form-group">
+                  <label class="control-label" for="projName">1. CSS Preprocessor (Default: LESS)</label>
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input type="radio" name="preprocessorOpt" value="css"> No Preprocessor (Use CSS only)
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" checked="true" name="preprocessorOpt" value="less"> LESS
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="preprocessorOpt" value="sass"> SASS
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="preprocessorOpt" value="stylus"> Stylus
+                    </label>
+                  </div>
                 </div>
-                <div class="panel-body">
-                  <label class="radio-inline">
-                    <input type="radio" name="preprocessorOpt" value="css"> No Preprocessor (Use CSS only)
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" checked="true" name="preprocessorOpt" value="less"> LESS
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="preprocessorOpt" value="sass"> SASS
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="preprocessorOpt" value="stylus"> Stylus
-                  </label>
+
+                <div class="form-group">
+                  <label class="control-label" for="projName">2. Linting and Build Systems ? (Default: Webpack)</label>
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input type="radio" checked="true" name="buildSysOpt" value="webpack"> Webpack
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="buildSysOpt" value="browserify"> Browserify
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="buildSysOpt" value="require"> Require.js
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="buildSysOpt" value="grunt"> Grunt
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="buildSysOpt" value="gulp"> Gulp
+                    </label>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="tab-pane" id="build">
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Do you want Protocore scaffolding to include Build Systems ? (Default: Webpack)</h3>
+
+                <div class="form-group">
+                  <label class="control-label" for="projName">3. Any Node.js based server ? (Default: Express)</label>
+                  <div class="form-group">
+                    <label class="radio-inline">
+                      <input type="radio" name="serverOpt" value="noserver"> No Server
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" checked="true" name="serverOpt" value="express"> Express
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="serverOpt" value="koa"> Koa
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="serverOpt" value="hapi"> Hapi
+                    </label>
+                  </div>
                 </div>
-                <div class="panel-body">
-                  <label class="radio-inline">
-                    <input type="radio" name="buildSysOpt" checked="true" value="webpack"> Webpack
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="buildSysOpt" value="require"> Require.js
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="buildSysOpt" value="grunt"> Grunt
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="buildSysOpt" value="gulp"> Gulp
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane" id="server">
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Do you want Protocore scaffolding to include any Node.js based server ? (Default: Express)</h3>
-                </div>
-                <div class="panel-body">
-                  <label class="radio-inline">
-                    <input type="radio" name="serverOpt" checked="true" value="noserver"> No Server
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="serverOpt" value="express"> Express
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="serverOpt" value="koa"> Koa
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="serverOpt" value="hapi"> Hapi
-                  </label>
-                </div>
-              </div>
+              </form>
             </div>
 					</div>
         </div>
