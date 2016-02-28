@@ -12,9 +12,9 @@
   "author": "hegdeashwin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hegdeashwin/protocore-studio/issues"
+    "url": "https://github.com/Protocore-UI/protocore-studio/issues"
   },
-  "homepage": "https://github.com/hegdeashwin/protocore-studio#readme",
+  "homepage": "https://github.com/Protocore-UI/protocore-studio#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.36.0"
   },
