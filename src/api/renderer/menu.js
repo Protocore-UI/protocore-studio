@@ -11,6 +11,7 @@
     label: 'File',
     submenu: [{
       label: 'Exit',
+      accelerator: 'CmdOrCtrl+W',
       role: 'close'
     }]
   }, {
@@ -28,12 +29,12 @@
     }, {
       type: 'separator'
     }, {
-      label: 'Issues Page',
+      label: 'Report Issues',
       click: function() {
         electron.shell.openExternal('https://github.com/Protocore-UI/protocore-studio/issues');
       }
     }, {
-      label: 'Open Pull Requests',
+      label: 'Send Pull Requests',
       click: function() {
         electron.shell.openExternal('https://github.com/Protocore-UI/protocore-studio/pulls');
       }
@@ -41,7 +42,8 @@
   }, {
     label: 'Help',
     submenu: [{
-      label: 'Documentation (Wiki)',
+      label: 'Documentation',
+      accelerator: 'CmdOrCtrl+Shift+D',
       click: function() {
         electron.shell.openExternal('https://github.com/Protocore-UI/protocore-studio/wiki');
       }
